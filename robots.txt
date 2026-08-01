@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://kingman37-net.github.io/kdcn-digital-platform/sitemap.xml
