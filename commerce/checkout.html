@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .checkout-hero .powered-by { font-size:0.9rem; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+    .checkout-hero h1 { font-size:2.8rem; }
+    .checkout-hero h1 span { color:var(--accent); }
+    .checkout-hero p { color:var(--text-muted); font-size:1.1rem; max-width:640px; margin:10px auto 0; }
+    .checkout-grid { display:grid; grid-template-columns:2fr 1fr; gap:40px; margin-top:20px; }
+    .checkout-form { display:flex; flex-direction:column; gap:20px; }
+    .checkout-form .form-group { display:flex; flex-direction:column; gap:6px; }
+    .checkout-form label { color:var(--text-primary); font-weight:600; font-size:0.9rem; }
+    .checkout-form input, .checkout-form select, .checkout-form textarea { padding:12px 16px; border-radius:10px; border:1px solid var(--card-border); background:var(--card-bg); color:var(--text-primary); font-size:1rem; transition:border-color 0.3s; font-family:inherit; }
+    .checkout-form input:focus, .checkout-form select:focus, .checkout-form textarea:focus { border-color:var(--accent); outline:none; }
+    .checkout-form textarea { resize:vertical; min-height:80px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .payment-methods { display:flex; gap:16px; flex-wrap:wrap; margin-top:4px; }
+    .payment-methods label { display:flex; align-items:center; gap:8px; padding:10px 18px; border:2px solid var(--card-border); border-radius:10px; cursor:pointer; transition:all 0.3s; font-weight:500; }
+    .payment-methods label:hover { border-color:var(--accent); }
+    .payment-methods input[type="radio"] { accent-color:var(--accent); }
+    .order-summary { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:25px; height:fit-content; position:sticky; top:100px; }
+    .order-summary h3 { color:var(--accent); font-size:1.3rem; border-bottom:1px solid var(--card-border); padding-bottom:12px; margin-bottom:16px; }
+    .order-item { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--card-border); font-size:0.9rem; }
+    .order-item .name { color:var(--text-primary); }
+    .order-item .price { color:var(--text-muted); }
+    .order-total { display:flex; justify-content:space-between; padding-top:16px; margin-top:16px; border-top:2px solid var(--accent); font-size:1.3rem; font-weight:700; }
+    .order-total .total-price { color:#00ffcc; }
+    .btn-place-order { width:100%; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0a0f14; padding:16px; border-radius:40px; border:none; font-weight:700; font-size:1.1rem; cursor:pointer; transition:all 0.3s; margin-top:20px; }
+    .btn-place-order:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,209,255,0.3); }
+    .empty-cart-msg { text-align:center; padding:40px 20px; color:var(--text-muted); }
+    .empty-cart-msg .icon { font-size:3rem; display:block; margin-bottom:12px; }
+    .empty-cart-msg a { color:var(--accent); text-decoration:none; font-weight:600; }
+    @media (max-width:768px) { .checkout-grid { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } .order-summary { position:static; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="checkout-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Secure <span>Checkout</span></h1>
+  <p>Complete your order securely. Your information is safe with us.</p>
+</section>
+
+<section>
+  <div id="checkoutContainer"></div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="store.html">Store</a></li><li><a href="../public/portfolio.html">Portfolio</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../client/login.html">Login</a></li><li><a href="../client/dashboard/index.html">Dashboard</a></li><li><a href="cart.html">Cart</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+
+  const container = document.getElementById('checkoutContainer');
+
+  function getCart() {
+    try { return JSON.parse(localStorage.getItem('kdcn_cart')) || []; } catch { return []; }
+  }
+
+  function renderCheckout() {
+    const cart = getCart();
+    if (cart.length === 0) {
+      container.innerHTML = `<div class="empty-cart-msg"><span class="icon">🛒</span><h2>Your cart is empty</h2><p>Add items to your cart before checking out.</p><a href="store.html">Browse Store →</a></div>`;
+      return;
+    }
+    let total = 0;
+    let itemsHtml = '';
+    cart.forEach(item => { const subtotal = item.price * item.qty; total += subtotal; itemsHtml += `<div class="order-item"><span class="name">${item.name} × ${item.qty}</span><span class="price">$${subtotal.toFixed(2)}</span></div>`; });
+
+    container.innerHTML = `<div class="checkout-grid"><div><form class="checkout-form" id="checkoutForm"><h2 style="color:var(--accent);font-size:1.5rem;margin-bottom:8px;">Billing Details</h2>
+      <div class="form-row"><div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" placeholder="John Doe" required></div><div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" placeholder="john@example.com" required></div></div>
+      <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" placeholder="+254 700 000 000" required></div>
+      <div class="form-group"><label for="address">Billing Address</label><input type="text" id="address" placeholder="Street, City, Country"></div>
+      <div class="form-group"><label for="notes">Order Notes (Optional)</label><textarea id="notes" placeholder="Any special instructions..."></textarea></div>
+      <div class="form-group"><label>Payment Method *</label>
+        <div class="payment-methods">
+          <label><input type="radio" name="payment" value="mpesa" checked> 📱 M-Pesa</label>
+          <label><input type="radio" name="payment" value="card"> 💳 Card</label>
+          <label><input type="radio" name="payment" value="bank"> 🏦 Bank Transfer</label>
+        </div>
+      </div>
+    </form></div>
+    <div class="order-summary"><h3>Order Summary</h3>${itemsHtml}<div class="order-total"><span>Total</span><span class="total-price">$${total.toFixed(2)}</span></div>
+    <button class="btn-place-order" id="placeOrderBtn">Proceed to Payment</button></div></div>`;
+
+    document.getElementById('placeOrderBtn').addEventListener('click', function() {
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const payment = document.querySelector('input[name="payment"]:checked');
+      if (!name || !email || !phone) { alert('⚠️ Please fill in all required fields (Name, Email, Phone).'); return; }
+      if (!payment) { alert('⚠️ Please select a payment method.'); return; }
+      const order = { name, email, phone, address: document.getElementById('address').value.trim(), notes: document.getElementById('notes').value.trim(), payment: payment.value, items: cart, total: total, date: new Date().toISOString() };
+      localStorage.setItem('kdcn_pending_order', JSON.stringify(order));
+      window.location.href = `payment.html?method=${payment.value}`;
+    });
+  }
+  renderCheckout();
+</script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Payment | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete your card payment securely for KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .card-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .card-hero h1 { font-size: 2.8rem; }
+    .card-hero h1 span { color: var(--accent); }
+    .card-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .card-form-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .card-form-wrapper h3 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-form .form-group {
+      margin-bottom: 18px;
+    }
+    .card-form label {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .card-form input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .card-form input:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .card-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .card-form .btn-pay {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 14px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+    .card-form .btn-pay:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 209, 255, 0.3);
+    }
+    .card-form .btn-pay:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .order-summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .order-summary-card h3 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .order-summary-card .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.95rem;
+    }
+    .order-summary-card .summary-row .label { color: var(--text-muted); }
+    .order-summary-card .summary-row .value { color: var(--text-primary); font-weight: 500; }
+    .order-summary-card .summary-total {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 2px solid var(--accent);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .order-summary-card .summary-total .total-price { color: #00ffcc; }
+    .confirm-status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+    .confirm-status.success {
+      display: block;
+      background: rgba(0, 255, 204, 0.1);
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+    .confirm-status.error {
+      display: block;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid #ff6b6b;
+      color: #ff6b6b;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .card-form .form-row { grid-template-columns: 1fr; }
+      .order-summary-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../../public/index.html">Home</a></li>
+      <li><a href="../../public/about.html">About</a></li>
+      <li><a href="../../public/services.html">Services</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="card-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Card <span>Payment</span></h1>
+  <p>Complete your payment securely using your debit or credit card.</p>
+</section>
+
+<!-- ===== CARD PAYMENT CONTENT ===== -->
+<section>
+  <div class="card-grid">
+    <!-- LEFT: Card Form -->
+    <div class="card-form-wrapper">
+      <h3>💳 Card Details</h3>
+      <form class="card-form" id="cardForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" maxlength="4" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cardName">Name on Card</label>
+          <input type="text" id="cardName" placeholder="John Doe" required />
+        </div>
+        <div id="payStatus" class="confirm-status"></div>
+        <button type="button" class="btn-pay" id="payBtn">Pay Now</button>
+      </form>
+      <a href="../checkout.html" class="back-link">← Back to Checkout</a>
+    </div>
+
+    <!-- RIGHT: Order Summary -->
+    <div class="order-summary-card">
+      <h3>📋 Order Summary</h3>
+      <div class="summary-row">
+        <span class="label">Order Reference</span>
+        <span class="value" id="summaryRef">KDCN-ORDER-001</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">Payment Method</span>
+        <span class="value">Card</span>
+      </div>
+      <div class="summary-total">
+        <span class="total-label">Total</span>
+        <span class="total-price" id="summaryAmount">$0.00</span>
+      </div>
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--card-border); font-size:0.85rem; color:var(--text-muted);">
+        🔒 Your payment is encrypted and secure.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM PHILOSOPHY ===== -->
+<section>
+  <div class="system">
+    <h2>System‑Driven Philosophy</h2>
+    <p>
+      <strong>Strong businesses are built on systems—not shortcuts.</strong><br /><br />
+      At KINGMAN DIGITAL PLATFORM, every transaction is grounded in security, structure, scalability, and sustainability.<br />
+      We don't just process payments. We build <strong>digital ecosystems</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../../public/index.html">Home</a></li>
+        <li><a href="../../public/about.html">About</a></li>
+        <li><a href="../../public/services.html">Services</a></li>
+        <li><a href="../store.html">Store</a></li>
+        <li><a href="../../public/portfolio.html">Portfolio</a></li>
+        <li><a href="../../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Customer</h4>
+      <ul>
+        <li><a href="../../client/login.html">Login</a></li>
+        <li><a href="../../client/dashboard/index.html">Dashboard</a></li>
+        <li><a href="../cart.html">Cart</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li><a href="../packages.html">Packages</a></li>
+        <li><a href="../../public/faq.html">FAQ</a></li>
+        <li><a href="../../public/privacy.html">Privacy</a></li>
+        <li><a href="../../public/terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact &amp; Social</h4>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">YouTube</a>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+        <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+        <li>📍 Embu, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+      Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+      <em>No Data Left Unguarded. No System Left Unsafe.</em>
+    </p>
+    <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // ===== HAMBURGER =====
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+
+  // ===== QUERY PARAMETERS =====
+  const urlParams = new URLSearchParams(window.location.search);
+  const amount = urlParams.get('amount') || '0.00';
+  const orderRef = urlParams.get('ref') || 'KDCN-ORDER-001';
+
+  document.getElementById('summaryAmount').textContent = `$${amount}`;
+  document.getElementById('summaryRef').textContent = orderRef;
+
+  // ===== CARD FORMATTING =====
+  document.getElementById('cardNumber').addEventListener('input', function(e) {
+    let val = this.value.replace(/\D/g, '');
+    val = val.replace(/(.{4})/g, '$1 ').trim();
+    this.value = val;
+  });
+
+  document.getElementById('expiry').addEventListener('input', function(e) {
+    let val = this.value.replace(/\D/g, '');
+    if (val.length >= 2) {
+      val = val.substring(0, 2) + '/' + val.substring(2, 4);
+    }
+    this.value = val;
+  });
+
+  document.getElementById('cvv').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '');
+  });
+
+  // ===== PAYMENT CONFIRMATION =====
+  const payBtn = document.getElementById('payBtn');
+  const statusDiv = document.getElementById('payStatus');
+
+  payBtn.addEventListener('click', function() {
+    const cardNum = document.getElementById('cardNumber').value.trim();
+    const expiry = document.getElementById('expiry').value.trim();
+    const cvv = document.getElementById('cvv').value.trim();
+    const cardName = document.getElementById('cardName').value.trim();
+
+    if (!cardNum || cardNum.length < 19) {
+      statusDiv.className = 'confirm-status error';
+      statusDiv.textContent = '❌ Please enter a valid card number.';
+      statusDiv.style.display = 'block';
+      return;
+    }
+    if (!expiry || expiry.length < 5) {
+      statusDiv.className = 'confirm-status error';
+      statusDiv.textContent = '❌ Please enter a valid expiry date (MM/YY).';
+      statusDiv.style.display = 'block';
+      return;
+    }
+    if (!cvv || cvv.length < 3) {
+      statusDiv.className = 'confirm-status error';
+      statusDiv.textContent = '❌ Please enter a valid CVV.';
+      statusDiv.style.display = 'block';
+      return;
+    }
+    if (!cardName) {
+      statusDiv.className = 'confirm-status error';
+      statusDiv.textContent = '❌ Please enter the name on the card.';
+      statusDiv.style.display = 'block';
+      return;
+    }
+
+    // Success simulation
+    statusDiv.className = 'confirm-status success';
+    statusDiv.innerHTML = `✅ Payment successful! Your card has been charged $${amount}. You will receive an order confirmation shortly.`;
+    statusDiv.style.display = 'block';
+    payBtn.disabled = true;
+    payBtn.textContent = '✓ Payment Complete';
+  });
+</script>
+</body>
+</html>

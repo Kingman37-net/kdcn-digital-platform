@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your KINGMAN DIGITAL CYBER NETWORK account." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .register-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .register-hero h1 { font-size: 2.8rem; }
+    .register-hero h1 span { color: var(--accent); }
+    .register-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .register-wrapper {
+      max-width: 440px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 35px 30px;
+    }
+    .register-wrapper .form-group { margin-bottom: 16px; }
+    .register-wrapper label {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .register-wrapper input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .register-wrapper input:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .register-wrapper .btn-register {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 14px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+    .register-wrapper .btn-register:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 209, 255, 0.3);
+    }
+    .register-wrapper .login-link {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+    }
+    .register-wrapper .login-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .register-wrapper .login-link a:hover { text-decoration: underline; }
+    .register-status {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+    .register-status.error {
+      display: block;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid #ff6b6b;
+      color: #ff6b6b;
+    }
+    .register-status.success {
+      display: block;
+      background: rgba(0, 255, 204, 0.1);
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+    @media (max-width: 768px) {
+      .register-wrapper { padding: 25px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="register-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Create <span>Account</span></h1>
+  <p>Join KINGMAN DIGITAL CYBER NETWORK and access your digital ecosystem.</p>
+</section>
+
+<!-- ===== REGISTER FORM ===== -->
+<section>
+  <div class="register-wrapper">
+    <h2 style="color:var(--accent); font-size:1.5rem; margin-bottom:20px; text-align:center;">Get Started</h2>
+    <form id="registerForm" onsubmit="return false;">
+      <div class="form-group">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email Address</label>
+        <input type="email" id="regEmail" placeholder="john@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="regPhone">Phone Number</label>
+        <input type="tel" id="regPhone" placeholder="+254 700 000 000" required />
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" placeholder="Min 6 characters" required minlength="6" />
+      </div>
+      <div class="form-group">
+        <label for="regConfirmPassword">Confirm Password</label>
+        <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required />
+      </div>
+      <div id="regStatus" class="register-status"></div>
+      <button type="button" class="btn-register" id="registerBtn">Create Account</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Log in here</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../public/index.html">Home</a></li>
+        <li><a href="../public/about.html">About</a></li>
+        <li><a href="../public/services.html">Services</a></li>
+        <li><a href="../commerce/store.html">Store</a></li>
+        <li><a href="../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Customer</h4>
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard/index.html">Dashboard</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li><a href="../commerce/packages.html">Packages</a></li>
+        <li><a href="../public/faq.html">FAQ</a></li>
+        <li><a href="../public/privacy.html">Privacy</a></li>
+        <li><a href="../public/terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact &amp; Social</h4>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">YouTube</a>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+        <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+        <li>📍 Embu, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+      Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+      <em>No Data Left Unguarded. No System Left Unsafe.</em>
+    </p>
+    <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // ===== HAMBURGER =====
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+
+  // ===== REGISTER LOGIC =====
+  const registerBtn = document.getElementById('registerBtn');
+  const regStatus = document.getElementById('regStatus');
+
+  registerBtn.addEventListener('click', function() {
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const phone = document.getElementById('regPhone').value.trim();
+    const password = document.getElementById('regPassword').value.trim();
+    const confirm = document.getElementById('regConfirmPassword').value.trim();
+
+    if (!name || !email || !phone || !password || !confirm) {
+      regStatus.className = 'register-status error';
+      regStatus.textContent = '❌ Please fill in all fields.';
+      regStatus.style.display = 'block';
+      return;
+    }
+
+    if (password !== confirm) {
+      regStatus.className = 'register-status error';
+      regStatus.textContent = '❌ Passwords do not match.';
+      regStatus.style.display = 'block';
+      return;
+    }
+
+    if (password.length < 6) {
+      regStatus.className = 'register-status error';
+      regStatus.textContent = '❌ Password must be at least 6 characters.';
+      regStatus.style.display = 'block';
+      return;
+    }
+
+    // Save user to localStorage
+    const users = JSON.parse(localStorage.getItem('kdcn_users')) || [];
+    if (users.find(u => u.email === email)) {
+      regStatus.className = 'register-status error';
+      regStatus.textContent = '❌ An account with this email already exists.';
+      regStatus.style.display = 'block';
+      return;
+    }
+
+    users.push({ name, email, phone, password, createdAt: new Date().toISOString() });
+    localStorage.setItem('kdcn_users', JSON.stringify(users));
+
+    regStatus.className = 'register-status success';
+    regStatus.textContent = '✅ Account created successfully! Redirecting to login...';
+    regStatus.style.display = 'block';
+    registerBtn.disabled = true;
+
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 2000);
+  });
+</script>
+</body>
+</html>

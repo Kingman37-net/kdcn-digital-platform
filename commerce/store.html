@@ -1,0 +1,193 @@
+cat > ~/KDCN3<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Store | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shop cybersecurity services, IT solutions, web development packages, and digital products from KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .store-hero .powered-by { font-size:0.9rem; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+    .store-hero h1 { font-size:2.8rem; }
+    .store-hero h1 span { color:var(--accent); }
+    .store-hero p { color:var(--text-muted); font-size:1.1rem; max-width:640px; margin:10px auto 0; }
+    .filter-bar { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-bottom:30px; }
+    .filter-btn { background:transparent; border:1px solid var(--card-border); color:var(--text-primary); padding:8px 24px; border-radius:30px; cursor:pointer; font-weight:600; transition:all 0.3s; }
+    .filter-btn:hover, .filter-btn.active { background:var(--accent); color:#0a0f14; border-color:var(--accent); }
+    .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:30px; }
+    .product-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); overflow:hidden; transition:all 0.3s; display:flex; flex-direction:column; }
+    .product-card:hover { transform:translateY(-8px); border-color:var(--accent); box-shadow:0 12px 40px rgba(0,209,255,0.06); }
+    .product-card img { width:100%; height:180px; object-fit:cover; }
+    .product-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+    .product-body .category-tag { color:var(--accent); font-size:0.75rem; text-transform:uppercase; font-weight:700; letter-spacing:0.5px; margin-bottom:4px; }
+    .product-body h3 { color:var(--text-primary); font-size:1.2rem; margin-bottom:6px; }
+    .product-body .price { font-size:1.5rem; font-weight:700; color:#00ffcc; margin:8px 0 12px 0; }
+    .product-body p { color:var(--text-muted); font-size:0.9rem; flex:1; margin-bottom:16px; }
+    .product-body .btn-add { background:var(--accent); color:#0a0f14; border:none; padding:10px 16px; border-radius:30px; font-weight:700; cursor:pointer; transition:all 0.3s; width:100%; }
+    .product-body .btn-add:hover { background:#00ffcc; transform:scale(1.02); }
+    .cart-status { position:fixed; bottom:24px; right:24px; background:var(--accent); color:#0a0f14; padding:12px 20px; border-radius:40px; font-weight:700; box-shadow:0 8px 30px rgba(0,209,255,0.3); z-index:999; display:flex; align-items:center; gap:8px; cursor:pointer; transition:all 0.3s; }
+    .cart-status:hover { transform:scale(1.05); }
+    .cart-status .badge { background:#0a0f14; color:#fff; border-radius:50%; padding:2px 10px; font-size:0.85rem; }
+    @media (max-width:768px) { .cart-status { bottom:100px; right:16px; padding:10px 16px; font-size:0.9rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="store-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Digital <span>Store</span></h1>
+  <p>Cybersecurity tools • IT solutions • Web development packages • Digital products</p>
+</section>
+
+<section>
+  <h2 class="section-title">Featured <span>Products</span></h2>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Cybersecurity">Cybersecurity</button>
+    <button class="filter-btn" data-filter="IT Infrastructure">IT Infrastructure</button>
+    <button class="filter-btn" data-filter="Web Dev">Web Dev</button>
+    <button class="filter-btn" data-filter="Digital">Digital Products</button>
+  </div>
+  <div id="productGrid" class="product-grid"></div>
+</section>
+
+<div class="cart-status" id="cartStatus">
+  🛒 Cart <span class="badge" id="cartCount">0</span>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="store.html">Store</a></li><li><a href="../public/portfolio.html">Portfolio</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../client/login.html">Login</a></li><li><a href="../client/dashboard/index.html">Dashboard</a></li><li><a href="cart.html">Cart</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  // ===== PRODUCT DATA =====
+  const products = [
+    { id: 1, name: "Advanced Cybersecurity Audit", category: "Cybersecurity", price: 150, image: "https://picsum.photos/seed/cyber1/300/200", desc: "Full penetration testing and vulnerability assessment." },
+    { id: 2, name: "Complete IT Infrastructure Setup", category: "IT Infrastructure", price: 250, image: "https://picsum.photos/seed/it1/300/200", desc: "Cloud deployment, Firebase, and secure architecture." },
+    { id: 3, name: "Professional Web Development Package", category: "Web Dev", price: 99, image: "https://picsum.photos/seed/web1/300/200", desc: "Custom website design and deployment – 5 pages." },
+    { id: 4, name: "KDCN OSINT Toolkit Pro", category: "Digital", price: 49, image: "https://picsum.photos/seed/digi1/300/200", desc: "Full suite of reconnaissance and monitoring scripts." },
+    { id: 5, name: "Zero Trust Security Implementation", category: "Cybersecurity", price: 180, image: "https://picsum.photos/seed/cyber2/300/200", desc: "Complete Zero Trust architecture design and deployment." },
+    { id: 6, name: "E-Commerce Platform Development", category: "Web Dev", price: 199, image: "https://picsum.photos/seed/web2/300/200", desc: "Full online store with cart, checkout, and payments." },
+    { id: 7, name: "Cloud Migration & Management", category: "IT Infrastructure", price: 120, image: "https://picsum.photos/seed/it2/300/200", desc: "Seamless migration to Google Cloud or Firebase." },
+    { id: 8, name: "KDCN Automation Engine (Bash + Python)", category: "Digital", price: 39, image: "https://picsum.photos/seed/digi2/300/200", desc: "Automate your workflows with KDCN scripts." }
+  ];
+
+  const grid = document.getElementById('productGrid');
+  const cartCount = document.getElementById('cartCount');
+
+  // ===== CART FUNCTIONS (using localStorage) =====
+  function getCart() {
+    try { return JSON.parse(localStorage.getItem('kdcn_cart')) || []; } catch { return []; }
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('kdcn_cart', JSON.stringify(cart));
+  }
+
+  function updateCartBadge() {
+    const cart = getCart();
+    cartCount.textContent = cart.length;
+  }
+
+  function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+    const cart = getCart();
+    // Check if product already exists in cart
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.qty = (existing.qty || 1) + 1;
+    } else {
+      cart.push({ ...product, qty: 1 });
+    }
+    saveCart(cart);
+    updateCartBadge();
+    alert(`🛒 Added "${product.name}" to your cart.`);
+  }
+
+  // ===== RENDER PRODUCTS =====
+  function renderProducts(filter = 'all') {
+    const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+    if (filtered.length === 0) {
+      grid.innerHTML = `<p style="text-align:center;width:100%;padding:40px;color:var(--text-muted);">No products in this category.</p>`;
+      return;
+    }
+    grid.innerHTML = filtered.map(p => `
+      <div class="product-card">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <div class="product-body">
+          <span class="category-tag">${p.category}</span>
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="price">$${p.price}</div>
+          <button class="btn-add" onclick="addToCart(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ===== FILTER BUTTONS =====
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      renderProducts(this.dataset.filter);
+    });
+  });
+
+  // ===== CART STATUS (Redirect to cart.html) =====
+  document.getElementById('cartStatus').addEventListener('click', function() {
+    const cart = getCart();
+    if (cart.length === 0) {
+      alert('Your cart is empty.');
+    } else {
+      window.location.href = 'cart.html';
+    }
+  });
+
+  // ===== THEME & HAMBURGER =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+
+  // ===== INIT =====
+  renderProducts('all');
+  updateCartBadge();
+</script>
+</body>
+</html>

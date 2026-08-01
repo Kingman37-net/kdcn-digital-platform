@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAQ | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about cybersecurity, IT systems, hosting, and services at KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <meta name="author" content="CTO KINGMAN_KE" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ===== Page-specific overrides ===== */
+    .faq-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .faq-hero h1 {
+      font-size: 2.8rem;
+    }
+    .faq-hero h1 span { color: var(--accent); }
+    .faq-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: all 0.3s;
+    }
+    .faq-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 30px rgba(0, 209, 255, 0.05);
+    }
+    .faq-item .q-icon {
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .faq-item h3 {
+      color: var(--accent);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      display: inline;
+    }
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+    .faq-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .faq-sidebar .sidebar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 25px 20px;
+    }
+    .faq-sidebar .sidebar-card h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+    .contact-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .contact-links li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--card-border);
+    }
+    .contact-links li:last-child { border-bottom: none; }
+    .contact-links .icon { font-size: 1.3rem; width: 28px; text-align: center; }
+    .contact-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .contact-links a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-sidebar { order: -1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="faq-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Frequently Asked <span>Questions</span></h1>
+  <p>Find answers to common questions about our cybersecurity services, hosting, and digital solutions.</p>
+</section>
+
+<!-- ===== FAQ GRID ===== -->
+<section>
+  <h2 class="section-title">Quick <span>Answers</span></h2>
+  <div class="faq-grid">
+    <!-- FAQ List -->
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> What cybersecurity services do you offer?</h3>
+        <p>We provide threat assessment, account protection, secure system architecture, digital identity protection, and vulnerability analysis for individuals and businesses.</p>
+      </div>
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> Do you offer hosting for client websites?</h3>
+        <p>Yes, we offer reseller hosting plans. You can manage multiple client websites under one account, with full control over resources and domains.</p>
+      </div>
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> How can I request a consultation?</h3>
+        <p>Use the contact form on this site, or reach out via WhatsApp, Telegram, or email. We'll respond as fast as possible.</p>
+      </div>
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> Are your systems scalable for startups?</h3>
+        <p>Absolutely. Our philosophy is built on scalability and long-term continuity. We design systems that grow with your business.</p>
+      </div>
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> What platforms do you use for cloud infrastructure?</h3>
+        <p>We work with Firebase, Google Cloud, Cloudflare, and other secure hosting solutions to ensure performance and reliability.</p>
+      </div>
+      <div class="faq-item">
+        <h3><span class="q-icon">❓</span> Do you offer ongoing support and maintenance?</h3>
+        <p>Yes, we provide support packages tailored to your needs, including security updates, monitoring, and technical assistance.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="faq-sidebar">
+      <div class="sidebar-card">
+        <h3>📬 Connect With Us</h3>
+        <ul class="contact-links">
+          <li><span class="icon">📧</span> <a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+          <li><span class="icon">💬</span> <a href="https://wa.me/254111843716" target="_blank">WhatsApp: +254 111 843 716</a></li>
+          <li><span class="icon">✈️</span> <a href="https://t.me/KINGMAN_KE" target="_blank">Telegram: @KINGMAN_KE</a></li>
+          <li><span class="icon">📸</span> <a href="https://www.instagram.com/kingman.254k" target="_blank">Instagram: @kingman.254k</a></li>
+          <li><span class="icon">🐦</span> <a href="https://x.com/Cto_kingman" target="_blank">X (Twitter): @Cto_kingman</a></li>
+          <li><span class="icon">📞</span> <a href="tel:+254111843716">+254 111 843 716</a></li>
+          <li><span class="icon">📍</span> Embu, Kenya, East Africa</li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="text-align:center;">
+        <p style="color:var(--text-muted); font-size:0.9rem;">Still have questions?</p>
+        <a href="contact.html" class="btn btn-primary" style="display:inline-block; margin-top:8px;">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM PHILOSOPHY ===== -->
+<section>
+  <div class="system">
+    <h2>System‑Driven Philosophy</h2>
+    <p>
+      <strong>Strong businesses are built on systems—not shortcuts.</strong><br /><br />
+      At KINGMAN DIGITAL PLATFORM, every answer is grounded in security, structure, scalability, and sustainability.<br />
+      We don't just answer questions. We build <strong>digital ecosystems</strong>.
+    </p>
+  </div>
+</section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="../commerce/store.html">Store</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer</h4>
+        <ul>
+          <li><a href="../client/login.html">Login</a></li>
+          <li><a href="../client/dashboard/index.html">Dashboard</a></li>
+          <li><a href="../commerce/cart.html">Cart</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Business</h4>
+        <ul>
+          <li><a href="../commerce/packages.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Social</h4>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">X (Twitter)</a>
+          <a href="#">YouTube</a>
+        </div>
+        <ul style="margin-top:12px;">
+          <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+          <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+          <li>📍 Embu, Kenya</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+        Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+        <em>No Data Left Unguarded. No System Left Unsafe.</em>
+      </p>
+      <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

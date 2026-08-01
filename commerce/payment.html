@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .payment-hero .powered-by { font-size:0.9rem; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+    .payment-hero h1 { font-size:2.8rem; }
+    .payment-hero h1 span { color:var(--accent); }
+    .payment-hero p { color:var(--text-muted); font-size:1.1rem; max-width:640px; margin:10px auto 0; }
+    .payment-wrapper { max-width:600px; margin:0 auto; background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:30px; }
+    .payment-wrapper .order-summary { background:var(--bg-body); padding:15px; border-radius:10px; margin-bottom:20px; }
+    .payment-wrapper .order-summary .row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--card-border); }
+    .payment-wrapper .order-summary .total { font-weight:700; font-size:1.2rem; border-bottom:none; padding-top:10px; }
+    .payment-wrapper .btn-pay { width:100%; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0a0f14; padding:16px; border-radius:40px; border:none; font-weight:700; font-size:1.1rem; cursor:pointer; transition:all 0.3s; margin-top:10px; }
+    .payment-wrapper .btn-pay:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,209,255,0.3); }
+    .payment-wrapper .payment-info { background:var(--bg-body); padding:20px; border-radius:10px; margin:15px 0; }
+    .payment-wrapper .payment-info input { width:100%; padding:12px; border-radius:10px; border:1px solid var(--card-border); background:var(--card-bg); color:var(--text-primary); font-size:1rem; margin-top:6px; }
+    .payment-wrapper .payment-info input:focus { border-color:var(--accent); outline:none; }
+    .back-link { display:inline-block; margin-top:20px; color:var(--accent); text-decoration:none; font-weight:600; }
+    .back-link:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="payment-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Complete <span>Payment</span></h1>
+  <p>Secure your order by completing your payment.</p>
+</section>
+
+<section>
+  <div class="payment-wrapper" id="paymentContainer"></div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="store.html">Store</a></li><li><a href="../public/portfolio.html">Portfolio</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../client/login.html">Login</a></li><li><a href="../client/dashboard/index.html">Dashboard</a></li><li><a href="cart.html">Cart</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+
+  const container = document.getElementById('paymentContainer');
+  const urlParams = new URLSearchParams(window.location.search);
+  const method = urlParams.get('method') || 'mpesa';
+  const order = JSON.parse(localStorage.getItem('kdcn_pending_order')) || { total: 0, items: [] };
+
+  const methodNames = { mpesa: '📱 M-Pesa', card: '💳 Card', bank: '🏦 Bank Transfer' };
+  const methodInfo = {
+    mpesa: 'BUY GOODS: 3653484',
+    card: 'Enter your card details below to complete payment.',
+    bank: 'Bank: Equity Bank | Account: 0112345678901'
+  };
+
+  container.innerHTML = `
+    <h3 style="color:var(--accent);text-align:center;">Payment Details</h3>
+    <div class="order-summary">
+      <div class="row"><span>Payment Method</span><span>${methodNames[method] || 'M-Pesa'}</span></div>
+      <div class="row"><span>Items</span><span>${order.items ? order.items.length : 0}</span></div>
+      <div class="row total"><span>Total</span><span>$${(order.total || 0).toFixed(2)}</span></div>
+    </div>
+    <div class="payment-info">
+      <p style="font-weight:600;">${methodInfo[method]}</p>
+      ${method === 'card' ? `<input type="text" id="cardNumber" placeholder="1234 5678 9012 3456"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;"><input type="text" id="expiry" placeholder="MM/YY"><input type="text" id="cvv" placeholder="CVV"></div><input type="text" id="cardName" placeholder="Name on Card" style="margin-top:10px;">` : ''}
+      ${method === 'mpesa' ? `<input type="text" id="mpesaRef" placeholder="Enter M-Pesa Transaction Code">` : ''}
+      ${method === 'bank' ? `<input type="text" id="bankRef" placeholder="Enter Bank Transaction Reference">` : ''}
+    </div>
+    <button class="btn-pay" id="payBtn">✓ Complete Payment</button>
+    <a href="checkout.html" class="back-link">← Back to Checkout</a>
+  `;
+
+  document.getElementById('payBtn').addEventListener('click', function() {
+    const orders = JSON.parse(localStorage.getItem('kdcn_orders')) || [];
+    orders.push(order);
+    localStorage.setItem('kdcn_orders', JSON.stringify(orders));
+    localStorage.removeItem('kdcn_cart');
+    localStorage.removeItem('kdcn_pending_order');
+    alert('✅ Payment successful! Your order has been confirmed.');
+    window.location.href = 'success.html';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Service Packages | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Choose the right package for your business from KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .packages-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .packages-hero h1 { font-size: 2.8rem; }
+    .packages-hero h1 span { color: var(--accent); }
+    .packages-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px 25px;
+      text-align: center;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(0, 209, 255, 0.06);
+    }
+    .pricing-card.popular {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(0, 209, 255, 0.1);
+    }
+    .pricing-card .badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent);
+      color: #0a0f14;
+      padding: 4px 18px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .pricing-card .icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+    .pricing-card .plan-name {
+      color: var(--text-primary);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pricing-card .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #00ffcc;
+      margin: 10px 0;
+    }
+    .pricing-card .price small {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .pricing-card .description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 0 0 20px 0;
+    }
+    .pricing-card ul li {
+      padding: 8px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-card ul li:last-child { border-bottom: none; }
+    .pricing-card ul li .check { color: var(--accent); font-weight: 700; }
+    .pricing-card ul li .cross { color: #ff6b6b; font-weight: 700; }
+    .pricing-card .btn-select {
+      background: var(--accent);
+      color: #0a0f14;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 4px;
+      width: 100%;
+      font-size: 1rem;
+    }
+    .pricing-card .btn-select:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3);
+      background: #00ffcc;
+    }
+    .pricing-card .btn-select.outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+    .pricing-card .btn-select.outline:hover {
+      background: var(--accent);
+      color: #0a0f14;
+    }
+    .custom-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+    }
+    .custom-note a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .custom-note a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="packages-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Service <span>Packages</span></h1>
+  <p>Choose the right package for your business and start building secure digital systems today.</p>
+</section>
+
+<!-- ===== PACKAGES GRID ===== -->
+<section>
+  <h2 class="section-title">Flexible Plans for Every <span>Business</span></h2>
+  <div class="pricing-grid">
+    <!-- Starter Package -->
+    <div class="pricing-card">
+      <span class="icon">🚀</span>
+      <div class="plan-name">Starter</div>
+      <div class="price">$49 <small>/mo</small></div>
+      <p class="description">Perfect for individuals and small startups.</p>
+      <ul>
+        <li><span class="check">✔</span> Basic Cybersecurity Setup</li>
+        <li><span class="check">✔</span> 1 Website Development</li>
+        <li><span class="check">✔</span> 1 Custom Email</li>
+        <li><span class="check">✔</span> 5 GB Cloud Storage</li>
+        <li><span class="cross">✘</span> 24/7 Support</li>
+      </ul>
+      <a href="checkout.html" class="btn-select outline">Choose Plan</a>
+    </div>
+
+    <!-- Professional Package (Popular) -->
+    <div class="pricing-card popular">
+      <span class="badge">Popular</span>
+      <span class="icon">💼</span>
+      <div class="plan-name">Professional</div>
+      <div class="price">$99 <small>/mo</small></div>
+      <p class="description">Ideal for growing businesses and professionals.</p>
+      <ul>
+        <li><span class="check">✔</span> Advanced Cybersecurity Audit</li>
+        <li><span class="check">✔</span> 3 Website Developments</li>
+        <li><span class="check">✔</span> 5 Custom Emails</li>
+        <li><span class="check">✔</span> 50 GB Cloud Storage</li>
+        <li><span class="check">✔</span> 24/7 Email Support</li>
+        <li><span class="check">✔</span> Monthly Security Reports</li>
+      </ul>
+      <a href="checkout.html" class="btn-select">Choose Plan</a>
+    </div>
+
+    <!-- Enterprise Package -->
+    <div class="pricing-card">
+      <span class="icon">🏢</span>
+      <div class="plan-name">Enterprise</div>
+      <div class="price">$199 <small>/mo</small></div>
+      <p class="description">For large organizations with complex needs.</p>
+      <ul>
+        <li><span class="check">✔</span> Full Cybersecurity Suite</li>
+        <li><span class="check">✔</span> 10 Website Developments</li>
+        <li><span class="check">✔</span> Unlimited Custom Emails</li>
+        <li><span class="check">✔</span> 500 GB Cloud Storage</li>
+        <li><span class="check">✔</span> 24/7 Priority Support</li>
+        <li><span class="check">✔</span> Dedicated Account Manager</li>
+        <li><span class="check">✔</span> Custom Integrations</li>
+      </ul>
+      <a href="checkout.html" class="btn-select outline">Choose Plan</a>
+    </div>
+  </div>
+
+  <!-- Custom Package Note -->
+  <div class="custom-note">
+    <strong>Need a custom package?</strong><br />
+    We offer tailored solutions for unique business requirements.
+    <a href="../public/contact.html">Contact us</a> for a personalized quote.
+  </div>
+</section>
+
+<!-- ===== SYSTEM PHILOSOPHY ===== -->
+<section>
+  <div class="system">
+    <h2>System‑Driven Philosophy</h2>
+    <p>
+      <strong>Strong businesses are built on systems—not shortcuts.</strong><br /><br />
+      At KINGMAN DIGITAL PLATFORM, every package is grounded in security, structure, scalability, and sustainability.<br />
+      We don't just offer plans. We build <strong>digital ecosystems</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../public/index.html">Home</a></li>
+        <li><a href="../public/about.html">About</a></li>
+        <li><a href="../public/services.html">Services</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="../public/portfolio.html">Portfolio</a></li>
+        <li><a href="../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Customer</h4>
+      <ul>
+        <li><a href="../client/login.html">Login</a></li>
+        <li><a href="../client/dashboard/index.html">Dashboard</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="../public/faq.html">FAQ</a></li>
+        <li><a href="../public/privacy.html">Privacy</a></li>
+        <li><a href="../public/terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact &amp; Social</h4>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">YouTube</a>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+        <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+        <li>📍 Embu, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+      Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+      <em>No Data Left Unguarded. No System Left Unsafe.</em>
+    </p>
+    <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // ===== HAMBURGER =====
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+</script>
+</body>
+</html>

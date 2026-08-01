@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Confirmation | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your order has been confirmed. Thank you for shopping with KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .success-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .success-hero h1 { font-size: 2.8rem; }
+    .success-hero h1 span { color: var(--accent); }
+    .success-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .confirmation-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .confirmation-box .checkmark {
+      font-size: 5rem;
+      color: #00ffcc;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .confirmation-box h2 {
+      color: var(--text-primary);
+      font-size: 2rem;
+    }
+    .confirmation-box .order-num {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 6px 0 20px 0;
+      display: inline-block;
+      padding: 6px 20px;
+      border: 1px dashed var(--accent);
+      border-radius: 30px;
+    }
+    .order-details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: left;
+      margin: 20px 0;
+    }
+    .order-details h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.95rem;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row .label { color: var(--text-muted); }
+    .detail-row .value { color: var(--text-primary); font-weight: 500; }
+    .order-items-summary {
+      margin-top: 12px;
+    }
+    .order-items-summary .item-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .order-items-summary .item-row .qty { color: var(--text-muted); }
+    .order-total-confirm {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0 0 0;
+      margin-top: 12px;
+      border-top: 2px solid var(--accent);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .order-total-confirm .total-label { color: var(--text-primary); }
+    .order-total-confirm .total-price { color: #00ffcc; }
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .action-buttons a {
+      padding: 12px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .action-buttons .btn-continue {
+      background: var(--accent);
+      color: #0a0f14;
+    }
+    .action-buttons .btn-continue:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3);
+    }
+    .action-buttons .btn-dashboard {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+    .action-buttons .btn-dashboard:hover {
+      background: var(--accent);
+      color: #0a0f14;
+    }
+    .empty-order {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+    }
+    .empty-order .icon { font-size: 3rem; display: block; margin-bottom: 12px; }
+    .empty-order a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .empty-order a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .confirmation-box .checkmark { font-size: 3.5rem; }
+      .confirmation-box h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="success-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Order <span>Confirmed</span></h1>
+  <p>Your order has been placed successfully. Thank you for your trust.</p>
+</section>
+
+<!-- ===== CONFIRMATION CONTENT ===== -->
+<section>
+  <div id="confirmationContainer" class="confirmation-box">
+    <!-- Rendered by JavaScript -->
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../public/index.html">Home</a></li>
+        <li><a href="../public/about.html">About</a></li>
+        <li><a href="../public/services.html">Services</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="../public/portfolio.html">Portfolio</a></li>
+        <li><a href="../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Customer</h4>
+      <ul>
+        <li><a href="../client/login.html">Login</a></li>
+        <li><a href="../client/dashboard/index.html">Dashboard</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="../public/faq.html">FAQ</a></li>
+        <li><a href="../public/privacy.html">Privacy</a></li>
+        <li><a href="../public/terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact &amp; Social</h4>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">YouTube</a>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+        <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+        <li>📍 Embu, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+      Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+      <em>No Data Left Unguarded. No System Left Unsafe.</em>
+    </p>
+    <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // ===== HAMBURGER =====
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+
+  // ===== CONFIRMATION LOGIC =====
+  const container = document.getElementById('confirmationContainer');
+
+  function getLatestOrder() {
+    try {
+      const orders = JSON.parse(localStorage.getItem('kdcn_orders')) || [];
+      return orders.length > 0 ? orders[orders.length - 1] : null;
+    } catch { return null; }
+  }
+
+  function generateOrderNumber() {
+    const prefix = 'KDCN';
+    const date = new Date();
+    const ts = date.getFullYear().toString().slice(2) +
+               String(date.getMonth() + 1).padStart(2, '0') +
+               String(date.getDate()).padStart(2, '0') +
+               String(date.getHours()).padStart(2, '0') +
+               String(date.getMinutes()).padStart(2, '0');
+    const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+    return `${prefix}-${ts}-${random}`;
+  }
+
+  function renderConfirmation() {
+    const order = getLatestOrder();
+
+    if (!order) {
+      container.innerHTML = `
+        <div class="empty-order">
+          <span class="icon">📭</span>
+          <h2>No recent orders found</h2>
+          <p>It looks like you haven't placed an order yet.</p>
+          <a href="store.html">Browse Store →</a>
+        </div>
+      `;
+      return;
+    }
+
+    // Build item summary
+    let itemsHtml = '';
+    order.items.forEach(item => {
+      itemsHtml += `
+        <div class="item-row">
+          <span>${item.name} <span class="qty">× ${item.qty}</span></span>
+          <span>$${(item.price * item.qty).toFixed(2)}</span>
+        </div>
+      `;
+    });
+
+    const orderNum = generateOrderNumber();
+    const total = order.total || order.items.reduce((s, i) => s + (i.price * i.qty), 0);
+
+    container.innerHTML = `
+      <span class="checkmark">✅</span>
+      <h2>Thank You, ${order.name || 'Customer'}!</h2>
+      <p style="color:var(--text-muted);">Your order has been confirmed and is being processed.</p>
+      <div class="order-num">Order #${orderNum}</div>
+
+      <div class="order-details">
+        <h3>Order Summary</h3>
+        <div class="detail-row">
+          <span class="label">Name</span>
+          <span class="value">${order.name}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Email</span>
+          <span class="value">${order.email}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Phone</span>
+          <span class="value">${order.phone}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Payment Method</span>
+          <span class="value" style="text-transform:capitalize;">${order.payment}</span>
+        </div>
+        <div class="detail-row" style="border-bottom: 1px solid var(--card-border);">
+          <span class="label">Date</span>
+          <span class="value">${new Date(order.date).toLocaleString()}</span>
+        </div>
+
+        <div class="order-items-summary">
+          <h4 style="color:var(--text-muted); font-size:1rem; margin:12px 0 8px;">Items</h4>
+          ${itemsHtml}
+        </div>
+
+        <div class="order-total-confirm">
+          <span class="total-label">Total</span>
+          <span class="total-price">$${total.toFixed(2)}</span>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="store.html" class="btn-continue">← Continue Shopping</a>
+        <a href="../client/dashboard/index.html" class="btn-dashboard">📊 View Dashboard</a>
+      </div>
+    `;
+  }
+
+  // ===== INIT =====
+  renderConfirmation();
+</script>
+</body>
+</html>

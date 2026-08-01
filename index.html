@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KINGMAN DIGITAL PLATFORM | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KINGMAN DIGITAL PLATFORM is a complete digital ecosystem for cybersecurity, websites, branding, business services, AI, digital strategy, and customer management. Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <meta name="author" content="CTO KINGMAN_KE" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ---------- Page-specific styles ---------- */
+    .hero .powered-by {
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .hero .sub-tagline {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1.2rem;
+    }
+    .hero .sub-tagline span { color: var(--accent); }
+
+    /* Introduction */
+    .intro-text {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    /* Mission & Vision */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .mv-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .mv-card:hover { border-color: var(--accent); }
+    .mv-card h3 { color: var(--accent); font-size: 1.5rem; margin-bottom: 10px; }
+    .mv-card p { color: var(--text-muted); font-size: 1.05rem; }
+    .mv-card .quote-mark {
+      font-size: 2.5rem;
+      color: var(--accent);
+      opacity: 0.3;
+      display: block;
+    }
+
+    /* Featured Services */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .featured-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .featured-item:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+    .featured-item .icon { font-size: 1.8rem; display: block; margin-bottom: 4px; }
+    .featured-item span { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+
+    /* Why Choose */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+    .why-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card-bg);
+      padding: 12px 16px;
+      border-radius: 40px;
+      border: 1px solid var(--card-border);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .why-item .check { color: var(--accent); font-size: 1.2rem; }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+    }
+    .cta-section .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 30px;
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .footer-grid h4 {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .footer-grid ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-grid ul li { margin-bottom: 4px; }
+    .footer-grid ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-grid ul li a:hover { color: var(--accent); }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .footer-social a {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+    .footer-social a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--card-border);
+      padding-top: 20px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-bottom .brand-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .mv-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero .sub-tagline { font-size: 1rem; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>KINGMAN DIGITAL PLATFORM</h1>
+  <p class="tagline">Your Complete Digital Business Ecosystem</p>
+  <div class="sub-tagline">
+    <span>Build.</span>
+    <span>Secure.</span>
+    <span>Grow.</span>
+    <span>Scale.</span>
+  </div>
+  <div class="hero-buttons">
+    <a href="services.html" class="btn btn-primary">Explore Services</a>
+    <a href="../commerce/store.html" class="btn btn-secondary">Visit Digital Store</a>
+    <a href="contact.html" class="btn btn-secondary">Book Consultation</a>
+  </div>
+</section>
+
+<!-- ===== INTRODUCTION ===== -->
+<section>
+  <h2 class="section-title">Welcome to <span>KINGMAN DIGITAL PLATFORM</span></h2>
+  <p class="intro-text">
+    One platform for businesses, entrepreneurs, professionals, and organizations to access digital services, cybersecurity solutions, branding, websites, business support, AI-powered assistance, and customer management.<br /><br />
+    Whether you're starting a business, growing your online presence, protecting your digital assets, or scaling your operations, <strong>KINGMAN DIGITAL PLATFORM</strong> provides the tools and services you need—all in one place.
+  </p>
+</section>
+
+<!-- ===== MISSION & VISION ===== -->
+<section>
+  <h2 class="section-title">Our <span>Mission &amp; Vision</span></h2>
+  <div class="mv-grid">
+    <div class="mv-card">
+      <span class="quote-mark">"</span>
+      <h3>Mission</h3>
+      <p>Empower individuals and businesses with secure, innovative, and reliable digital solutions that create long-term success.</p>
+    </div>
+    <div class="mv-card">
+      <span class="quote-mark">"</span>
+      <h3>Vision</h3>
+      <p>To become Africa's trusted digital platform for cybersecurity, business technology, digital transformation, and intelligent online services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLATFORM OVERVIEW (5 LAYERS) ===== -->
+<section>
+  <h2 class="section-title">The Five Layers of <span>KINGMAN DIGITAL PLATFORM</span></h2>
+  <div class="layer-grid">
+    <div class="layer-item"><h4>🌐 Public Layer</h4><p>Website, Service Catalog, Portfolio, Academy, Resources, Blog</p></div>
+    <div class="layer-item"><h4>🛒 Commerce Layer</h4><p>Digital Store, Packages, Cart, Checkout, Payments, Invoices</p></div>
+    <div class="layer-item"><h4>🧠 Intelligence Layer</h4><p>AI Assistant, Knowledge Base, Sales Automation, Support, BI</p></div>
+    <div class="layer-item"><h4>👤 Client Layer</h4><p>Login, Dashboard, Projects, Orders, Messages, Documents, Bookings</p></div>
+    <div class="layer-item"><h4>📊 Business Layer</h4><p>Admin Dashboard, Analytics, CRM, Revenue, Automation, Reports</p></div>
+  </div>
+</section>
+
+<!-- ===== FEATURED SERVICES ===== -->
+<section>
+  <h2 class="section-title">Featured <span>Services</span></h2>
+  <div class="featured-grid">
+    <div class="featured-item"><span class="icon">🛡️</span><span>Cybersecurity Services</span></div>
+    <div class="featured-item"><span class="icon">🌐</span><span>Website Design &amp; Development</span></div>
+    <div class="featured-item"><span class="icon">🎨</span><span>Logo &amp; Brand Identity</span></div>
+    <div class="featured-item"><span class="icon">📱</span><span>Social Media Management</span></div>
+    <div class="featured-item"><span class="icon">🚀</span><span>Digital Strategy Consultation</span></div>
+    <div class="featured-item"><span class="icon">💼</span><span>Business Startup Services</span></div>
+    <div class="featured-item"><span class="icon">📍</span><span>Google Business Profile</span></div>
+    <div class="featured-item"><span class="icon">📄</span><span>Professional Career Package</span></div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE KDCN ===== -->
+<section>
+  <h2 class="section-title">Why Choose <span>KDCN</span></h2>
+  <div class="why-grid">
+    <div class="why-item"><span class="check">✔</span> Professional Solutions</div>
+    <div class="why-item"><span class="check">✔</span> Secure Digital Systems</div>
+    <div class="why-item"><span class="check">✔</span> Modern Technology</div>
+    <div class="why-item"><span class="check">✔</span> Fast Customer Support</div>
+    <div class="why-item"><span class="check">✔</span> Scalable Business Solutions</div>
+    <div class="why-item"><span class="check">✔</span> Trusted Digital Partner</div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM PHILOSOPHY ===== -->
+<section>
+  <div class="system">
+    <h2>System‑Driven Philosophy</h2>
+    <p>
+      <strong>Strong businesses are built on systems—not shortcuts.</strong><br /><br />
+      At KINGMAN DIGITAL PLATFORM, every service is designed around security, structure, scalability, and sustainability.<br />
+      We don't just build projects. We build <strong>digital ecosystems</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CALL TO ACTION ===== -->
+<section>
+  <div class="cta-section">
+    <h2 style="font-size:2rem;">Ready to transform your business?</h2>
+    <p style="color:var(--text-muted); font-size:1.2rem;">Start your digital journey today.</p>
+    <div class="btn-group">
+      <a href="services.html" class="btn btn-primary">Explore Services</a>
+      <a href="contact.html" class="btn btn-secondary">Request Quote</a>
+      <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT (Minimal) ===== -->
+<section id="contact" class="contact" style="text-align:center;">
+  <h2 class="section-title">Get in <span>Touch</span></h2>
+  <p style="color:var(--text-muted);">Reach out for consultations, collaborations, or any IT & cybersecurity inquiries.</p>
+  <p style="margin-top:10px;">Email: <a href="mailto:kingmandigitalcybernetwork@gmail.com" style="color:var(--accent);">kingmandigitalcybernetwork@gmail.com</a></p>
+  <p>Phone/WhatsApp: <a href="https://wa.me/254111843716" style="color:var(--accent);">+254 111 843 716</a></p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="../commerce/store.html">Store</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer</h4>
+        <ul>
+          <li><a href="../client/login.html">Login</a></li>
+          <li><a href="../client/dashboard/index.html">Dashboard</a></li>
+          <li><a href="../commerce/cart.html">Cart</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Business</h4>
+        <ul>
+          <li><a href="../commerce/packages.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Social</h4>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">X (Twitter)</a>
+          <a href="#">YouTube</a>
+        </div>
+        <ul style="margin-top:12px;">
+          <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+          <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+          <li>📍 Embu, Kenya</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+        Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+        <em>No Data Left Unguarded. No System Left Unsafe.</em>
+      </p>
+      <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Support | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get help and support from KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../public/assets/css/style.css" />
+  <style>
+    .support-hero .powered-by { font-size: 0.9rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .support-hero h1 { font-size: 2.8rem; }
+    .support-hero h1 span { color: var(--accent); }
+    .support-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 10px auto 0; }
+    .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+    .support-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 25px; }
+    .support-card h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 12px; }
+    .support-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
+    .support-card a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .support-card a:hover { text-decoration: underline; }
+    .ticket-form { display: flex; flex-direction: column; gap: 12px; }
+    .ticket-form input, .ticket-form select, .ticket-form textarea {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      font-family: inherit;
+    }
+    .ticket-form input:focus, .ticket-form select:focus, .ticket-form textarea:focus { border-color: var(--accent); outline: none; }
+    .ticket-form textarea { min-height: 120px; resize: vertical; }
+    .ticket-form button {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 14px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .ticket-form button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3); }
+    @media (max-width: 768px) { .support-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="support-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Customer <span>Support</span></h1>
+  <p>We're here to help. Reach out to us anytime for assistance.</p>
+</section>
+
+<section>
+  <div class="support-grid">
+    <div class="support-card">
+      <h3>📧 Email Support</h3>
+      <p>Send us an email and we'll respond within 24 hours.</p>
+      <a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a>
+    </div>
+    <div class="support-card">
+      <h3>💬 WhatsApp</h3>
+      <p>Chat with us instantly on WhatsApp for quick support.</p>
+      <a href="https://wa.me/254111843716" target="_blank">+254 111 843 716</a>
+    </div>
+    <div class="support-card">
+      <h3>✈️ Telegram</h3>
+      <p>Join our Telegram channel for real-time updates and support.</p>
+      <a href="https://t.me/KINGMAN_KE" target="_blank">@KINGMAN_KE</a>
+    </div>
+    <div class="support-card">
+      <h3>📚 Knowledge Base</h3>
+      <p>Find answers to common questions in our Knowledge Base.</p>
+      <a href="knowledge-base.html">Browse Knowledge Base →</a>
+    </div>
+    <div class="support-card" style="grid-column: 1 / -1;">
+      <h3>📝 Submit a Support Ticket</h3>
+      <form class="ticket-form" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select required>
+          <option value="">Select Category</option>
+          <option>Technical Support</option>
+          <option>Billing</option>
+          <option>General Inquiry</option>
+          <option>Report Issue</option>
+        </select>
+        <textarea placeholder="Describe your issue in detail..."></textarea>
+        <button type="button" onclick="alert('✅ Ticket submitted! We will respond within 24 hours.')">Submit Ticket</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="../commerce/store.html">Store</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../client/login.html">Login</a></li><li><a href="../client/register.html">Register</a></li><li><a href="../client/dashboard/index.html">Dashboard</a></li><li><a href="support.html">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="../commerce/packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resources | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Download guides, templates, and tools from KINGMAN DIGITAL CYBER NETWORK for cybersecurity, IT, and digital systems." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .resources-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .resources-hero h1 { font-size: 2.8rem; }
+    .resources-hero h1 span { color: var(--accent); }
+    .resources-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+    .resource-card .icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+    .resource-card h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 8px; }
+    .resource-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .resource-card .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .resource-card .btn-download {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 10px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .resource-card .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3);
+    }
+    .resource-card .btn-view {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .resource-card .btn-view:hover {
+      background: var(--accent);
+      color: #0a0f14;
+    }
+    .resource-note {
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../../commerce/store.html">Store</a></li>
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="resources-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Resources <span>Library</span></h1>
+  <p>Download guides, templates, and tools to help you build secure digital systems.</p>
+</section>
+
+<!-- ===== RESOURCE CARDS ===== -->
+<section>
+  <h2 class="section-title">Available <span>Resources</span></h2>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <span class="icon">📘</span>
+      <h3>Digital System Guides</h3>
+      <p>Step-by-step guides on implementing secure and efficient digital systems for remote work or projects.</p>
+      <div class="btn-group">
+        <a href="#" class="btn-download">⬇ Download</a>
+        <a href="#" class="btn-view">👁 View</a>
+      </div>
+    </div>
+    <div class="resource-card">
+      <span class="icon">💼</span>
+      <h3>Remote Job Resources</h3>
+      <p>Resources, templates, and tips for professionals seeking remote job opportunities and productivity tools.</p>
+      <div class="btn-group">
+        <a href="#" class="btn-download">⬇ Download</a>
+        <a href="#" class="btn-view">👁 View</a>
+      </div>
+    </div>
+    <div class="resource-card">
+      <span class="icon">🛠️</span>
+      <h3>Software &amp; Tools Tips</h3>
+      <p>Recommendations and tips for software, cloud platforms, and remote working tools to optimize your workflow.</p>
+      <div class="btn-group">
+        <a href="#" class="btn-download">⬇ Download</a>
+        <a href="#" class="btn-view">👁 View</a>
+      </div>
+    </div>
+    <div class="resource-card">
+      <span class="icon">🔒</span>
+      <h3>Cybersecurity Templates</h3>
+      <p>Ready-to-use templates for security audits, risk assessments, and incident response planning.</p>
+      <div class="btn-group">
+        <a href="#" class="btn-download">⬇ Download</a>
+        <a href="#" class="btn-view">👁 View</a>
+      </div>
+    </div>
+  </div>
+  <div class="resource-note">
+    📌 More resources will be added soon. Check back for updates.
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="../commerce/store.html">Store</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer</h4>
+        <ul>
+          <li><a href="../client/login.html">Login</a></li>
+          <li><a href="../client/dashboard/index.html">Dashboard</a></li>
+          <li><a href="../commerce/cart.html">Cart</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Business</h4>
+        <ul>
+          <li><a href="../commerce/packages.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Social</h4>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">X (Twitter)</a>
+          <a href="#">YouTube</a>
+        </div>
+        <ul style="margin-top:12px;">
+          <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+          <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+          <li>📍 Embu, Kenya</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+        Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+        <em>No Data Left Unguarded. No System Left Unsafe.</em>
+      </p>
+      <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

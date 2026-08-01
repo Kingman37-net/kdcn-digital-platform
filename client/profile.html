@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .profile-hero .powered-by { font-size: 0.9rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .profile-hero h1 { font-size: 2.8rem; }
+    .profile-hero h1 span { color: var(--accent); }
+    .profile-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 10px auto 0; }
+    .profile-wrapper { max-width: 500px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 30px; }
+    .profile-wrapper .form-group { margin-bottom: 18px; }
+    .profile-wrapper label { display: block; color: var(--text-primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+    .profile-wrapper input { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--text-primary); font-size: 1rem; transition: border-color 0.3s; }
+    .profile-wrapper input:focus { border-color: var(--accent); outline: none; }
+    .profile-wrapper .btn-save { width: 100%; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #0a0f14; padding: 14px; border-radius: 40px; border: none; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; margin-top: 8px; }
+    .profile-wrapper .btn-save:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 209, 255, 0.3); }
+    .profile-status { margin-top: 12px; padding: 12px; border-radius: 10px; display: none; }
+    .profile-status.success { display: block; background: rgba(0,255,204,0.1); border: 1px solid #00ffcc; color: #00ffcc; }
+    .profile-status.error { display: block; background: rgba(255,107,107,0.1); border: 1px solid #ff6b6b; color: #ff6b6b; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="profile-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>My <span>Profile</span></h1>
+  <p>Manage your account information and settings.</p>
+</section>
+
+<section>
+  <div class="profile-wrapper">
+    <h2 style="color:var(--accent); font-size:1.5rem; margin-bottom:20px; text-align:center;">Edit Profile</h2>
+    <form id="profileForm" onsubmit="return false;">
+      <div class="form-group">
+        <label for="profName">Full Name</label>
+        <input type="text" id="profName" required />
+      </div>
+      <div class="form-group">
+        <label for="profEmail">Email Address</label>
+        <input type="email" id="profEmail" required disabled style="opacity:0.6;" />
+      </div>
+      <div class="form-group">
+        <label for="profPhone">Phone Number</label>
+        <input type="tel" id="profPhone" required />
+      </div>
+      <div id="profStatus" class="profile-status"></div>
+      <button type="button" class="btn-save" id="saveProfileBtn">Save Changes</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="../commerce/store.html">Store</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="login.html">Login</a></li><li><a href="register.html">Register</a></li><li><a href="dashboard/index.html">Dashboard</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="../commerce/packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+
+  const currentUser = JSON.parse(localStorage.getItem('kdcn_current_user'));
+  if (!currentUser) window.location.href = 'login.html';
+
+  document.getElementById('profName').value = currentUser.name || '';
+  document.getElementById('profEmail').value = currentUser.email || '';
+  document.getElementById('profPhone').value = currentUser.phone || '';
+
+  document.getElementById('saveProfileBtn').addEventListener('click', function() {
+    const name = document.getElementById('profName').value.trim();
+    const phone = document.getElementById('profPhone').value.trim();
+    if (!name) {
+      const status = document.getElementById('profStatus');
+      status.className = 'profile-status error';
+      status.textContent = '❌ Name cannot be empty.';
+      status.style.display = 'block';
+      return;
+    }
+    const users = JSON.parse(localStorage.getItem('kdcn_users')) || [];
+    const idx = users.findIndex(u => u.email === currentUser.email);
+    if (idx > -1) {
+      users[idx].name = name;
+      users[idx].phone = phone;
+      localStorage.setItem('kdcn_users', JSON.stringify(users));
+      const updated = users[idx];
+      localStorage.setItem('kdcn_current_user', JSON.stringify(updated));
+      const status = document.getElementById('profStatus');
+      status.className = 'profile-status success';
+      status.textContent = '✅ Profile updated successfully!';
+      status.style.display = 'block';
+      document.getElementById('profName').value = updated.name;
+      document.getElementById('profPhone').value = updated.phone || '';
+    }
+  });
+</script>
+</body>
+</html>

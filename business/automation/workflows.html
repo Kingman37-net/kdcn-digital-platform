@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Workflows | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../../public/assets/css/style.css" />
+  <style>
+    .workflows-hero .powered-by { font-size: 0.9rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .workflows-hero h1 { font-size: 2.8rem; }
+    .workflows-hero h1 span { color: var(--accent); }
+    .workflows-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 10px auto 0; }
+    .admin-grid { display: grid; grid-template-columns: 240px 1fr; gap: 30px; margin-top: 20px; }
+    .admin-sidebar { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 20px; height: fit-content; }
+    .admin-sidebar .brand .logo-text { color: var(--accent); font-size: 1.3rem; font-weight: 700; }
+    .admin-sidebar .nav-admin { list-style: none; padding: 0; }
+    .admin-sidebar .nav-admin li { margin-bottom: 4px; }
+    .admin-sidebar .nav-admin a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500; transition: all 0.3s; }
+    .admin-sidebar .nav-admin a:hover, .admin-sidebar .nav-admin a.active { background: var(--accent); color: #0a0f14; }
+    .workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .workflow-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 20px; }
+    .workflow-card .icon { font-size: 2rem; display: block; margin-bottom: 6px; }
+    .workflow-card h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 4px; }
+    .workflow-card p { color: var(--text-muted); font-size: 0.85rem; }
+    .workflow-card .status-badge { display: inline-block; padding: 2px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; margin-top: 8px; }
+    .workflow-card .status-badge.active { background: rgba(0,255,204,0.15); color: #00ffcc; border: 1px solid #00ffcc; }
+    .workflow-card .status-badge.inactive { background: rgba(255,107,107,0.15); color: #ff6b6b; border: 1px solid #ff6b6b; }
+    @media (max-width: 768px) { .admin-grid { grid-template-columns: 1fr; } .admin-sidebar { order: -1; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../../public/index.html">Home</a></li>
+      <li><a href="../../public/about.html">About</a></li>
+      <li><a href="../../public/services.html">Services</a></li>
+      <li><a href="../../commerce/store.html">Store</a></li>
+      <li><a href="../../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../../client/login.html">Logout</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="workflows-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Automation <span>Workflows</span></h1>
+  <p>Manage automated tasks, cron jobs, and system processes.</p>
+</section>
+
+<section>
+  <div class="admin-grid">
+    <div class="admin-sidebar">
+      <div class="brand"><div class="logo-text">🔷 KDCN Admin</div><div style="color:var(--text-muted);font-size:0.8rem;">Business Layer</div></div>
+      <ul class="nav-admin">
+        <li><a href="../admin/index.html">📊 Dashboard</a></li>
+        <li><a href="../admin/analytics.html">📈 Analytics</a></li>
+        <li><a href="../admin/revenue.html">💰 Revenue</a></li>
+        <li><a href="../admin/crm.html">👥 CRM</a></li>
+        <li><a href="workflows.html" class="active">⚙️ Workflows</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <span class="icon">🔄</span>
+          <h3>GitHub Auto-Sync</h3>
+          <p>Automatically commits and pushes changes to GitHub every hour.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+        <div class="workflow-card">
+          <span class="icon">☁️</span>
+          <h3>Google Drive Backup</h3>
+          <p>Daily backup of KDCN37K workspace to Google Drive.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+        <div class="workflow-card">
+          <span class="icon">📊</span>
+          <h3>System Health Monitor</h3>
+          <p>Checks CPU, RAM, storage, and battery every 30 minutes.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+        <div class="workflow-card">
+          <span class="icon">🧹</span>
+          <h3>Log Cleanup</h3>
+          <p>Cleans up old log files daily to save storage space.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+        <div class="workflow-card">
+          <span class="icon">🛡️</span>
+          <h3>Security Scan</h3>
+          <p>Runs vulnerability scans on your system weekly.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+        <div class="workflow-card">
+          <span class="icon">📧</span>
+          <h3>Email Reports</h3>
+          <p>Sends automated email reports to the admin every Monday.</p>
+          <span class="status-badge active">Active</span>
+        </div>
+      </div>
+      <div style="margin-top:20px; padding:20px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); text-align:center; color:var(--text-muted);">
+        💡 Workflows are managed via cron jobs. <a href="#" style="color:var(--accent);">Configure</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../../public/index.html">Home</a></li><li><a href="../../public/about.html">About</a></li><li><a href="../../public/services.html">Services</a></li><li><a href="../../commerce/store.html">Store</a></li><li><a href="../../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../../client/login.html">Login</a></li><li><a href="../../client/register.html">Register</a></li><li><a href="../../client/dashboard/index.html">Dashboard</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="../admin/index.html">Admin</a></li><li><a href="../../public/faq.html">FAQ</a></li><li><a href="../../public/privacy.html">Privacy</a></li><li><a href="../../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+</script>
+</body>
+</html>

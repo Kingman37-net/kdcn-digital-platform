@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRM | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../../public/assets/css/style.css" />
+  <style>
+    .crm-hero .powered-by { font-size: 0.9rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .crm-hero h1 { font-size: 2.8rem; }
+    .crm-hero h1 span { color: var(--accent); }
+    .crm-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 10px auto 0; }
+    .admin-grid { display: grid; grid-template-columns: 240px 1fr; gap: 30px; margin-top: 20px; }
+    .admin-sidebar { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 20px; height: fit-content; }
+    .admin-sidebar .brand .logo-text { color: var(--accent); font-size: 1.3rem; font-weight: 700; }
+    .admin-sidebar .nav-admin { list-style: none; padding: 0; }
+    .admin-sidebar .nav-admin li { margin-bottom: 4px; }
+    .admin-sidebar .nav-admin a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500; transition: all 0.3s; }
+    .admin-sidebar .nav-admin a:hover, .admin-sidebar .nav-admin a.active { background: var(--accent); color: #0a0f14; }
+    .crm-table-wrapper { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 20px; overflow-x: auto; }
+    .crm-table-wrapper table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .crm-table-wrapper th { text-align: left; padding: 10px 14px; color: var(--accent); border-bottom: 2px solid var(--card-border); }
+    .crm-table-wrapper td { padding: 10px 14px; border-bottom: 1px solid var(--card-border); color: var(--text-primary); }
+    .crm-table-wrapper .badge { display: inline-block; padding: 2px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; background: rgba(0,255,204,0.15); color: #00ffcc; border: 1px solid #00ffcc; }
+    @media (max-width: 768px) { .admin-grid { grid-template-columns: 1fr; } .admin-sidebar { order: -1; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../../public/index.html">Home</a></li>
+      <li><a href="../../public/about.html">About</a></li>
+      <li><a href="../../public/services.html">Services</a></li>
+      <li><a href="../../commerce/store.html">Store</a></li>
+      <li><a href="../../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../../client/login.html">Logout</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="crm-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Customer <span>CRM</span></h1>
+  <p>Manage and view all registered customers.</p>
+</section>
+
+<section>
+  <div class="admin-grid">
+    <div class="admin-sidebar">
+      <div class="brand"><div class="logo-text">🔷 KDCN Admin</div><div style="color:var(--text-muted);font-size:0.8rem;">Business Layer</div></div>
+      <ul class="nav-admin">
+        <li><a href="index.html">📊 Dashboard</a></li>
+        <li><a href="analytics.html">📈 Analytics</a></li>
+        <li><a href="revenue.html">💰 Revenue</a></li>
+        <li><a href="crm.html" class="active">👥 CRM</a></li>
+        <li><a href="../automation/workflows.html">⚙️ Workflows</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="crm-table-wrapper">
+        <h3 style="color:var(--accent);margin-bottom:12px;">👤 Registered Customers</h3>
+        <div id="crmTable"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../../public/index.html">Home</a></li><li><a href="../../public/about.html">About</a></li><li><a href="../../public/services.html">Services</a></li><li><a href="../../commerce/store.html">Store</a></li><li><a href="../../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../../client/login.html">Login</a></li><li><a href="../../client/register.html">Register</a></li><li><a href="../../client/dashboard/index.html">Dashboard</a></li><li><a href="#">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="index.html">Admin</a></li><li><a href="../../public/faq.html">FAQ</a></li><li><a href="../../public/privacy.html">Privacy</a></li><li><a href="../../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+
+  const users = JSON.parse(localStorage.getItem('kdcn_users')) || [];
+  const container = document.getElementById('crmTable');
+  if (users.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);">No registered customers yet.</p>';
+  } else {
+    let html = `<table><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Status</th></tr>`;
+    users.forEach(u => {
+      html += `<tr><td>${u.name}</td><td>${u.email}</td><td>${u.phone || 'N/A'}</td><td>${u.createdAt ? new Date(u.createdAt).toLocaleDateString() : 'N/A'}</td><td><span class="badge">Active</span></td></tr>`;
+    });
+    html += `</table>`;
+    container.innerHTML = html;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Assistant | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get AI-powered assistance from KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../public/assets/css/style.css" />
+  <style>
+    .ai-hero .powered-by { font-size: 0.9rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .ai-hero h1 { font-size: 2.8rem; }
+    .ai-hero h1 span { color: var(--accent); }
+    .ai-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 10px auto 0; }
+    .chat-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+    .chat-messages {
+      height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      margin-bottom: 16px;
+      background: var(--bg-body);
+    }
+    .chat-messages .msg {
+      padding: 10px 16px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      max-width: 80%;
+    }
+    .chat-messages .msg.user {
+      background: var(--accent);
+      color: #0a0f14;
+      margin-left: auto;
+      text-align: right;
+    }
+    .chat-messages .msg.bot {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+    }
+    .chat-messages .msg .time { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; display: block; }
+    .chat-input-row {
+      display: flex;
+      gap: 12px;
+    }
+    .chat-input-row input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--bg-body);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+    .chat-input-row input:focus { border-color: var(--accent); outline: none; }
+    .chat-input-row button {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 12px 28px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .chat-input-row button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3);
+    }
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .quick-actions button {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+    .quick-actions button:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo"></div>
+    <ul class="nav-menu">
+      <li><a href="../public/index.html">Home</a></li>
+      <li><a href="../public/about.html">About</a></li>
+      <li><a href="../public/services.html">Services</a></li>
+      <li><a href="../commerce/store.html">Store</a></li>
+      <li><a href="../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</nav>
+
+<section class="ai-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>AI <span>Assistant</span></h1>
+  <p>Get instant answers, recommendations, and support from our intelligent assistant.</p>
+</section>
+
+<section>
+  <div class="chat-wrapper">
+    <div id="chatMessages" class="chat-messages">
+      <div class="msg bot"><strong>🤖 AI Assistant</strong><br>Hello! I'm your KDCN AI Assistant. How can I help you today?<span class="time">Now</span></div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()">
+      <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+    <div class="quick-actions">
+      <button onclick="quickSend('What services do you offer?')">Services</button>
+      <button onclick="quickSend('How do I contact support?')">Support</button>
+      <button onclick="quickSend('Tell me about KDCN')">About KDCN</button>
+      <button onclick="quickSend('What is the pricing?')">Pricing</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>Quick Links</h4><ul><li><a href="../public/index.html">Home</a></li><li><a href="../public/about.html">About</a></li><li><a href="../public/services.html">Services</a></li><li><a href="../commerce/store.html">Store</a></li><li><a href="../public/contact.html">Contact</a></li></ul></div>
+    <div><h4>Customer</h4><ul><li><a href="../client/login.html">Login</a></li><li><a href="../client/register.html">Register</a></li><li><a href="../client/dashboard/index.html">Dashboard</a></li><li><a href="support.html">Support</a></li></ul></div>
+    <div><h4>Business</h4><ul><li><a href="../commerce/packages.html">Packages</a></li><li><a href="../public/faq.html">FAQ</a></li><li><a href="../public/privacy.html">Privacy</a></li><li><a href="../public/terms.html">Terms</a></li></ul></div>
+    <div><h4>Contact &amp; Social</h4><div class="footer-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a><a href="#">YouTube</a></div><ul style="margin-top:12px;"><li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li><li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li><li>📍 Embu, Kenya</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p><span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br /><em>No Data Left Unguarded. No System Left Unsafe.</em></p><p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
+  toggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); toggle.textContent = isLight ? '☀️' : '🌙'; });
+  document.getElementById('hamburger').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); });
+
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+
+  function addMessage(sender, text) {
+    const msg = document.createElement('div');
+    msg.className = `msg ${sender}`;
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    msg.innerHTML = sender === 'bot' ? `<strong>🤖 AI Assistant</strong><br>${text}<span class="time">${time}</span>` : `${text}<span class="time">${time}</span>`;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function quickSend(text) {
+    chatInput.value = text;
+    sendMessage();
+  }
+
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    addMessage('user', text);
+    chatInput.value = '';
+    setTimeout(() => {
+      const responses = [
+        "That's a great question! Let me help you with that.",
+        "I'd be happy to assist you with that. Could you provide more details?",
+        "Based on my knowledge, I recommend checking out our services page for more information.",
+        "That's a common question. I'd suggest looking at our Knowledge Base for detailed guides.",
+        "I'm here to help! Let me connect you with the right resources."
+      ];
+      const reply = responses[Math.floor(Math.random() * responses.length)];
+      addMessage('bot', reply);
+    }, 800);
+  }
+</script>
+</body>
+</html>

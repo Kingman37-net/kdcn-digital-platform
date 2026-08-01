@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bank Transfer | Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete your bank transfer payment securely for KINGMAN DIGITAL CYBER NETWORK (KDCN)." />
+  <link rel="icon" href="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .bank-hero .powered-by {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .bank-hero h1 { font-size: 2.8rem; }
+    .bank-hero h1 span { color: var(--accent); }
+    .bank-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 10px auto 0;
+    }
+    .bank-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .bank-details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .bank-details h3 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bank-details .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .bank-details .info-row:last-child { border-bottom: none; }
+    .bank-details .info-row .label { color: var(--text-muted); font-weight: 500; }
+    .bank-details .info-row .value {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .bank-details .info-row .value.highlight { color: var(--accent); }
+    .bank-steps {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .bank-steps h3 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .bank-steps .step {
+      display: flex;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--card-border);
+      align-items: flex-start;
+    }
+    .bank-steps .step:last-child { border-bottom: none; }
+    .bank-steps .step .num {
+      background: var(--accent);
+      color: #0a0f14;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .bank-steps .step .text { color: var(--text-muted); font-size: 0.95rem; }
+    .bank-steps .step .text strong { color: var(--text-primary); }
+    .confirm-section {
+      margin-top: 30px;
+      padding: 30px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .confirm-section h3 {
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .confirm-section p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; }
+    .confirm-section .form-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .confirm-section input {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+      flex: 1;
+      min-width: 200px;
+      transition: border-color 0.3s;
+    }
+    .confirm-section input:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .confirm-section .btn-confirm {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0a0f14;
+      padding: 12px 32px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1rem;
+    }
+    .confirm-section .btn-confirm:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 209, 255, 0.3);
+    }
+    .confirm-status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+    .confirm-status.success {
+      display: block;
+      background: rgba(0, 255, 204, 0.1);
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+    .confirm-status.error {
+      display: block;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid #ff6b6b;
+      color: #ff6b6b;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .bank-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/sJ2r4wpY/Kingman-digital-cyber-network-logos.png" alt="KDCN Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../../public/index.html">Home</a></li>
+      <li><a href="../../public/about.html">About</a></li>
+      <li><a href="../../public/services.html">Services</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../../public/portfolio.html">Portfolio</a></li>
+      <li><a href="../../client/login.html">Login</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="bank-hero hero">
+  <p class="powered-by">⚡ Powered by KINGMAN DIGITAL CYBER NETWORK (KDCN)</p>
+  <h1>Bank <span>Transfer</span></h1>
+  <p>Complete your payment via bank transfer securely.</p>
+</section>
+
+<!-- ===== BANK TRANSFER CONTENT ===== -->
+<section>
+  <div class="bank-grid">
+    <!-- LEFT: Bank Details -->
+    <div class="bank-details">
+      <h3>🏦 Bank Account Details</h3>
+      <div class="info-row">
+        <span class="label">Bank Name</span>
+        <span class="value">Equity Bank Kenya</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Account Name</span>
+        <span class="value">KINGMAN DIGITAL CYBER NETWORK</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Account Number</span>
+        <span class="value highlight">0112345678901</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Branch</span>
+        <span class="value">Embu Branch</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Swift Code</span>
+        <span class="value">EQBLKENA</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Reference</span>
+        <span class="value highlight" id="bankRef">KDCN-ORDER-001</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Amount</span>
+        <span class="value highlight" id="bankAmount">$0.00</span>
+      </div>
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--card-border); font-size:0.85rem; color:var(--text-muted);">
+        ⚠️ Please use your Order Reference as the payment reference.
+      </div>
+    </div>
+
+    <!-- RIGHT: Steps -->
+    <div class="bank-steps">
+      <h3>📋 How to Pay</h3>
+      <div class="step">
+        <span class="num">1</span>
+        <span class="text">Log in to your <strong>mobile banking</strong> or visit your <strong>bank branch</strong>.</span>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <span class="text">Add <strong>Equity Bank</strong> as the beneficiary.</span>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <span class="text">Enter the <strong>Account Number</strong>: <strong>0112345678901</strong>.</span>
+      </div>
+      <div class="step">
+        <span class="num">4</span>
+        <span class="text">Enter the <strong>Amount</strong>: <strong id="stepBankAmount">$0.00</strong>.</span>
+      </div>
+      <div class="step">
+        <span class="num">5</span>
+        <span class="text">Enter the <strong>Reference</strong>: <strong id="stepBankRef">KDCN-ORDER-001</strong>.</span>
+      </div>
+      <div class="step">
+        <span class="num">6</span>
+        <span class="text">Confirm the transfer and keep the <strong>receipt</strong>.</span>
+      </div>
+      <div class="step">
+        <span class="num">7</span>
+        <span class="text">Complete the confirmation form below with your transaction details.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRM SECTION -->
+  <div class="confirm-section">
+    <h3>✅ Already Sent the Payment?</h3>
+    <p>Enter your transaction reference and upload your receipt to confirm your order.</p>
+    <form id="confirmForm" onsubmit="return false;">
+      <div class="form-row">
+        <input type="text" id="transactionRef" placeholder="e.g. TRX-123456789" required />
+        <button type="button" class="btn-confirm" id="confirmBtn">Confirm Payment</button>
+      </div>
+    </form>
+    <div id="confirmStatus" class="confirm-status"></div>
+    <a href="../checkout.html" class="back-link">← Back to Checkout</a>
+  </div>
+</section>
+
+<!-- ===== SYSTEM PHILOSOPHY ===== -->
+<section>
+  <div class="system">
+    <h2>System‑Driven Philosophy</h2>
+    <p>
+      <strong>Strong businesses are built on systems—not shortcuts.</strong><br /><br />
+      At KINGMAN DIGITAL PLATFORM, every transaction is grounded in security, structure, scalability, and sustainability.<br />
+      We don't just process payments. We build <strong>digital ecosystems</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../../public/index.html">Home</a></li>
+        <li><a href="../../public/about.html">About</a></li>
+        <li><a href="../../public/services.html">Services</a></li>
+        <li><a href="../store.html">Store</a></li>
+        <li><a href="../../public/portfolio.html">Portfolio</a></li>
+        <li><a href="../../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Customer</h4>
+      <ul>
+        <li><a href="../../client/login.html">Login</a></li>
+        <li><a href="../../client/dashboard/index.html">Dashboard</a></li>
+        <li><a href="../cart.html">Cart</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Business</h4>
+      <ul>
+        <li><a href="../packages.html">Packages</a></li>
+        <li><a href="../../public/faq.html">FAQ</a></li>
+        <li><a href="../../public/privacy.html">Privacy</a></li>
+        <li><a href="../../public/terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact &amp; Social</h4>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">YouTube</a>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><a href="mailto:kingmandigitalcybernetwork@gmail.com">kingmandigitalcybernetwork@gmail.com</a></li>
+        <li><a href="https://wa.me/254111843716">WhatsApp: +254111843716</a></li>
+        <li>📍 Embu, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      <span class="brand-highlight">KINGMAN DIGITAL PLATFORM</span><br />
+      Powered by <strong>KINGMAN DIGITAL CYBER NETWORK (KDCN)</strong><br />
+      <em>No Data Left Unguarded. No System Left Unsafe.</em>
+    </p>
+    <p>© 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // ===== HAMBURGER =====
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+
+  // ===== QUERY PARAMETERS =====
+  const urlParams = new URLSearchParams(window.location.search);
+  const amount = urlParams.get('amount') || '0.00';
+  const orderRef = urlParams.get('ref') || 'KDCN-ORDER-001';
+
+  document.getElementById('bankAmount').textContent = `$${amount}`;
+  document.getElementById('stepBankAmount').textContent = `$${amount}`;
+  document.getElementById('bankRef').textContent = orderRef;
+  document.getElementById('stepBankRef').textContent = orderRef;
+
+  // ===== CONFIRM PAYMENT =====
+  const confirmBtn = document.getElementById('confirmBtn');
+  const transRef = document.getElementById('transactionRef');
+  const statusDiv = document.getElementById('confirmStatus');
+
+  confirmBtn.addEventListener('click', function() {
+    const ref = transRef.value.trim();
+    if (!ref) {
+      statusDiv.className = 'confirm-status error';
+      statusDiv.textContent = '❌ Please enter the transaction reference.';
+      statusDiv.style.display = 'block';
+      return;
+    }
+
+    statusDiv.className = 'confirm-status success';
+    statusDiv.innerHTML = `✅ Thank you! Your transfer (${ref}) has been confirmed. You will receive an order confirmation shortly.`;
+    statusDiv.style.display = 'block';
+    transRef.disabled = true;
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = '✓ Confirmed';
+  });
+</script>
+</body>
+</html>
