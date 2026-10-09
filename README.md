@@ -1,6 +1,7 @@
 # KDCN Digital Platform
 
 A modern digital platform developed by KINGMAN DIGITAL CYBER NETWORK (KDCN).
+A modular digital platform designed to bring together KDCN's public website, client services, commerce capabilities, business operations, and digital intelligence within an expandable architecture. Long-term vision: an integrated KDCN digital ecosystem.
 
 ## 🌍 Live Website
 
