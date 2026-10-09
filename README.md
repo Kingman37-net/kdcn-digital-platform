@@ -55,44 +55,84 @@ Business Layer
 
 ---
 
-## Technologies
+Repository Structure
 
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- GitHub Pages
+Everything published to the live site lives inside docs/.
+Source-only files (README, ROADMAP, CHANGELOG) stay at the repository root.
+
+```
+KDCN-Digital-Platform/
+├── README.md              ← source
+├── ROADMAP.md             ← source
+├── CHANGELOG.md           ← source
+├── .gitignore
+│
+└── docs/                  ← published site (GitHub Pages)
+    ├── index.html
+    ├── about.html
+    ├── services.html
+    ├── portfolio.html
+    ├── contact.html
+    ├── faq.html
+    ├── privacy.html
+    ├── terms.html
+    ├── careers.html
+    ├── blog.html
+    ├── linktree.html
+    ├── livestream.html
+    ├── resources.html
+    ├── assets/
+    │   ├── css/
+    │   └── js/
+    │
+    ├── client/            ← client portal
+    ├── commerce/          ← commerce layer
+    ├── business/          ← business admin
+    ├── intelligence/      ← AI features
+    ├── blog/              ← blog posts
+    └── resources/         ← downloadable resources
+```
 
 ---
 
-## Security Philosophy
+Technologies
 
-> **No Data Left Unguarded. No System Left Unsafe.**
+· HTML5
+· CSS3
+· JavaScript
+· Git
+· GitHub Pages
 
 ---
 
-## Project Status
+Security Philosophy
 
-**Version 1.1.0 – Production Ready**
+No Data Left Unguarded. No System Left Unsafe.
+
+---
+
+Project Status
+
+Version 1.1.0 – Production Ready
 
 Currently under active development.
 
 ---
 
-## Roadmap
+Roadmap
 
-- ✅ Public Website
-- 🚧 Commerce Layer
-- 🚧 Intelligence Layer
-- 🚧 Client Layer
-- 🚧 Business Layer
+· ✅ Public Website
+· 🚧 Commerce Layer
+· 🚧 Intelligence Layer
+· 🚧 Client Layer
+· 🚧 Business Layer
 
 ---
 
-## Developer
+Developer
 
-**KINGMAN DIGITAL PLATFORM**
+KINGMAN DIGITAL PLATFORM
 
-A Digital Platform by **KINGMAN DIGITAL CYBER NETWORK (KDCN)**
+A Digital Platform by KINGMAN DIGITAL CYBER NETWORK (KDCN)
 
 © 2026 KINGMAN DIGITAL PLATFORM. All Rights Reserved.
